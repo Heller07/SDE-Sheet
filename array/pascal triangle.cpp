@@ -1,4 +1,4 @@
-//TC is O(n3)
+//TC is of the order of O(n3)or O(n2r)
 long long int ncr(int n,int r){
     int res = 1;
     for(int i = 0;i<r;i++){
@@ -18,7 +18,7 @@ vector<vector<int>> pascalTriangle(int N) {
     return ans;
 }
 //MORE optimised
-//TC is O(n2)
+//TC is O(n2) or to be more precise it is O(n*r)
 vector<int> generateRow(int row){
     long long ans=1;
     vector<int> ansRow;
