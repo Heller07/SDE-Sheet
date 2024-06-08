@@ -45,6 +45,7 @@ bool searchMatrix(vector<vector<int>>& matrix, int target) {
 }
 
 //3
+//by flattening the 2d into 1d(not really)
 //Time Complexity: O(log(NxM)), where N = given row number, M = given column number.
 // Reason: We are applying binary search on the imaginary 1D array of size NxM.
 // Space Complexity: O(1) as we are not using any extra space.
@@ -58,12 +59,35 @@ public:
     int low = 0, high = n * m - 1;
     while (low <= high) {
         int mid = (low + high) / 2;
-        int row = mid / m, col = mid % m;
+        int row = mid / m, col = mid % m;//mid is mid index of assumed 1d array,row col are index of 2d mat,this is how we convert 1d index into 2d row and cols
         if (matrix[row][col] == target) return true;
         else if (matrix[row][col] < target) low = mid + 1;
         else high = mid - 1;
     }
     return false;
        
+    }
+};
+//4
+//proper binary search for 2D mat
+//TC is O(N+M)
+//SC is 1
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+    int n = matrix.size();
+    int m = matrix[0].size();
+    int row = 0;int col = m-1;
+    while(row<n&&col>=0){
+        if(matrix[row][col]==target){
+            return true;
+        }
+        else if(matrix[row][col]>target){
+            col--;
+        }
+        else{
+            row++;        }
+    }
+       return false;
     }
 };
