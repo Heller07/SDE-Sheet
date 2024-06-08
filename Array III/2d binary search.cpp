@@ -65,6 +65,26 @@ public:
         else high = mid - 1;
     }
     return false;
+    //by for loop
+    //     bool searchMatrix(vector<vector<int>>& mat, int target) {
+    //     int n=mat.size();
+
+    // int m=mat[0].size();
+
+    // for(int i=0;i<n*m;i++){
+
+    //     if(mat[i/m][i%m]==target){
+
+    //         return true;
+
+    //     }
+
+    // }
+
+    // return false;
+
+
+}
        
     }
 };
