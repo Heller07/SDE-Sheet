@@ -37,7 +37,7 @@ public:
             left++;
         }
         else {
-            temp.push_back(nums[right]);
+            temp.push_back(nums[right]);//" we can't do this if(num[left]>2num[right]) cnt++; This is because even if arr[left] > 2*arr[right] is not satisfied, right will be incremented as arr[left] > arr[right]. To calculate cnt, right has to be incremented only when arr[left] > 2*arr[right] is true. So, this requires an extra while loop
             right++;
         }
     }
