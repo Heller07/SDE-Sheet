@@ -7,7 +7,7 @@ Space Complexity: O(1)
 class Solution {
 public:
     void deleteNode(ListNode* node) {
-        node->val = node->next->val;  //in place of these two line we can write    *(node) = *(node->next);//// Copy the data from the next node to the current node
+        node->val = node->next->val;  //in place of these two line we can write    *(node) = *(node->next);//// Copy the data from the next node to the current node//value bhi copy kr raha address bhi update kr raha 
    
         node->next = node->next->next;
         return;
