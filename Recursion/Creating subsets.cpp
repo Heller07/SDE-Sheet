@@ -19,3 +19,27 @@ public:
         return ans;
     }
 };
+//if array has unique element
+class Solution {
+public:
+    void makesubset(int index,vector<int> &nums,vector<int> &ds,vector<vector<int>> &ans){
+        if(index>=nums.size()){
+            ans.push_back(ds);
+            return;
+        }
+        //exclude
+        makesubset(index+1,nums,ds,ans);
+
+        //include
+        ds.push_back(nums[index]);
+        makesubset(index+1,nums,ds,ans);
+
+    }
+    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        vector<vector<int>> ans;
+        vector<int> ds;
+    
+        makesubset(0,nums,ds,ans);
+        return ans;
+    }
+};
