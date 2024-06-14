@@ -27,19 +27,31 @@ public:
             ans.push_back(ds);
             return;
         }
-        //exclude
-        makesubset(index+1,nums,ds,ans);
-
         //include
         ds.push_back(nums[index]);
         makesubset(index+1,nums,ds,ans);
+        ds.pop_back();
+        
+        //exclude
+        makesubset(index+1,nums,ds,ans);
+
 
     }
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         vector<vector<int>> ans;
         vector<int> ds;
+        sort(nums.begin(),nums.end());
     
         makesubset(0,nums,ds,ans);
-        return ans;
+        set<vector<int>>st;
+        for(int i=0;i<ans.size();i++)
+        {
+            st.insert(ans[i]);
+        }
+        vector<vector<int>>ans2;
+        for(auto s:st)
+        {
+            ans2.push_back(s);
+        }
+        return ans2; 
     }
-};
