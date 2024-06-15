@@ -1,4 +1,4 @@
-
+//we can also do like combination sum I in that we just have i+1 in include case and store it in a set and then extract answer from set.
 // Time Complexity:O(2^n*k)
 // Reason: Assume if all the elements in the array are unique then the no. of subsequence you will get will be O(2^n). we also add the ds to our ans when we reach the base case that will take “k”//average space for the ds.
 // Space Complexity:O(k*x)
