@@ -1,5 +1,7 @@
 // TC IS O(ELogV) worst case
 //we are not using queue to avoid calculation of unnecessary path which will end up consuming more time
+//not applicable for negative weights
+
 class Solution
 {
 	public:
