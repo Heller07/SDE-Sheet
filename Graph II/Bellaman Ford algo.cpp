@@ -1,3 +1,4 @@
+// the Bellman-Ford algorithm is applicable when you need to find the shortest path in graphs that may contain negative weights or when detecting negative weight cycles is necessary.
 // Time Complexity: O(V*E), where V = no. of vertices and E = no. of Edges.
 // Space Complexity: O(V) for the distance array which stores the minimized distances.
 class Solution {
